@@ -1,0 +1,48 @@
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args)
+    {
+        ArrayList<Animal> animals = new ArrayList<>();
+
+        //Create 5 objects
+        Animal obj1 = new Animal("Rex", 5);
+        Dog obj2 = new Dog("Buddy", 3, "Shih Tzu");
+        Dog obj3 = new Dog("Milo", 1000, "Terrier");
+        Animal obj4 = new Dog("Jake", 7, "German Shepherd");
+        Dog obj5 = new Dog("Luna", 4, "Husky");
+        Dog obj6 = new Dog("Ivy", 3,"PitBull");
+        Dog obj7 = new Dog("Tyro", 6,"Chihuahua");
+        Animal obj8 = new Animal("Leland", 10000);
+        Animal obj9 = new Animal("Johnathan", 8);
+
+
+
+        //Add to list
+        animals.add(obj1);
+        animals.add(obj2);
+        animals.add(obj3);
+        animals.add(obj4);
+        animals.add(obj5);
+        animals.add(obj6);
+        animals.add(obj7);
+        animals.add(obj8);
+        animals.add(obj9);
+
+        //Using the methods
+        for (Animal animal : animals) {
+            System.out.println(animal.getName() + " is a " + animal.getAge() + " year " + "old " +
+                    (animal instanceof Dog ? "dog" : "animal"));
+
+            if (animal instanceof Dog)
+            {
+                ((Dog) animal).fetch();
+                ((Dog) animal).wagTail();
+            }
+
+            animal.makeSound();
+            animal.eat();
+            System.out.println();
+        }
+    }
+}
